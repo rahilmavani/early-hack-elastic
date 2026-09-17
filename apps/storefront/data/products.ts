@@ -296,6 +296,7 @@ export const products: Product[] = [
     ],
     rating: 4.5,
     reviewCount: 274,
+    isNew: true,
   },
   {
     id: "p-014",
