@@ -1,0 +1,394 @@
+{
+  "oxford-shirt-white": [
+    {
+      "url": "https://images.unsplash.com/photo-1612541122840-bf7071c968a2",
+      "photographer": "Jeremy McGilvrey",
+      "photographerUrl": "https://unsplash.com/@jeremy_mcgilvrey",
+      "photoUrl": "https://unsplash.com/photos/man-in-white-dress-shirt-and-blue-denim-jeans-20oegq2JDYU"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1781145822880-ab30339ac274",
+      "photographer": "Alexander Mass",
+      "photographerUrl": "https://unsplash.com/@alexandermassph",
+      "photoUrl": "https://unsplash.com/photos/bearded-man-in-white-shirt-standing-in-a-grassy-field-tqKIzImcbsk"
+    }
+  ],
+  "crew-tee-black": [
+    {
+      "url": "https://images.unsplash.com/photo-1726140872004-850c80900ae3",
+      "photographer": "Tim Bernhard",
+      "photographerUrl": "https://unsplash.com/@bernhardvisuals",
+      "photoUrl": "https://unsplash.com/photos/a-young-man-standing-on-a-skateboard-on-a-city-street-pYDQyzThtLE"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1726140872193-231b808dc4cb",
+      "photographer": "Tim Bernhard",
+      "photographerUrl": "https://unsplash.com/@bernhardvisuals",
+      "photoUrl": "https://unsplash.com/photos/a-man-walking-down-a-sidewalk-carrying-a-bag-rE7zLW-W740"
+    }
+  ],
+  "selvedge-denim": [
+    {
+      "url": "https://images.unsplash.com/photo-1555689502-c4b22d76c56f",
+      "photographer": "Ivan Bogdanov",
+      "photographerUrl": "https://unsplash.com/@ivnbgdnv",
+      "photoUrl": "https://unsplash.com/photos/man-in-blue-denim-jeans-standing-17qC7l19hMI"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1511196044526-5cb3bcb7071b",
+      "photographer": "Creaslim",
+      "photographerUrl": "https://unsplash.com/@creaslim",
+      "photoUrl": "https://unsplash.com/photos/man-wearing-distressed-black-denim-fitted-jeans-and-pair-of-black-vans-old-skool-shoes-0QDEj5dnUMk"
+    }
+  ],
+  "merino-crewneck": [
+    {
+      "url": "https://images.unsplash.com/photo-1611312449297-a69dc9c3987b",
+      "photographer": "Caio Coelho",
+      "photographerUrl": "https://unsplash.com/@smokthebikini",
+      "photoUrl": "https://unsplash.com/photos/black-sweater-on-white-clothes-hanger-NA9dtyWAFV4"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1614495039368-525273956716",
+      "photographer": "HamZa NOUASRIA",
+      "photographerUrl": "https://unsplash.com/@hamza01nsr",
+      "photoUrl": "https://unsplash.com/photos/man-in-black-long-sleeve-shirt-and-blue-denim-jeans-owpsBDBK5nY"
+    }
+  ],
+  "chore-jacket": [
+    {
+      "url": "https://images.unsplash.com/photo-1700059425529-411240553003",
+      "photographer": "Amir Abbaspoor",
+      "photographerUrl": "https://unsplash.com/@amirabbaspoor",
+      "photoUrl": "https://unsplash.com/photos/a-man-standing-in-front-of-a-stone-wall-aXA9ql1n1kE"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1594587639708-095eb3778067",
+      "photographer": "Toa Heftiba",
+      "photographerUrl": "https://unsplash.com/@heftiba",
+      "photoUrl": "https://unsplash.com/photos/person-holding-green-denim-jacket-gX8dF8Zoegg"
+    }
+  ],
+  "linen-shirt-sand": [
+    {
+      "url": "https://images.unsplash.com/photo-1713881587420-113c1c43e28a",
+      "photographer": "tian dayong",
+      "photographerUrl": "https://unsplash.com/@tonnnyj",
+      "photoUrl": "https://unsplash.com/photos/a-white-shirt-hanging-on-a-clothes-line-S4f4apZd-hA"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1713881842156-3d9ef36418cc",
+      "photographer": "tian dayong",
+      "photographerUrl": "https://unsplash.com/@tonnnyj",
+      "photoUrl": "https://unsplash.com/photos/a-blue-shirt-hanging-on-a-clothes-line-SI7Hmk8MXQU"
+    }
+  ],
+  "pleated-trousers": [
+    {
+      "url": "https://images.unsplash.com/photo-1626557981101-aae6f84aa6ff",
+      "photographer": "Mohamad Khosravi",
+      "photographerUrl": "https://unsplash.com/@mohamadkhosravi",
+      "photoUrl": "https://unsplash.com/photos/man-in-white-pants-and-blue-and-white-checkered-button-up-shirt-standing-on-gray-concrete-cp4ucXlnhYw"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1642886512785-b5fee9faad7f",
+      "photographer": "Mohamad Khosravi",
+      "photographerUrl": "https://unsplash.com/@mohamadkhosravi",
+      "photoUrl": "https://unsplash.com/photos/a-man-in-a-red-sweater-and-black-pants-N_dEi1iG69s"
+    }
+  ],
+  "ribbed-tank": [
+    {
+      "url": "https://images.unsplash.com/photo-1785273751809-f50baa9f6e0c",
+      "photographer": "McFollis",
+      "photographerUrl": "https://unsplash.com/@thisismcfollis",
+      "photoUrl": "https://unsplash.com/photos/a-young-woman-in-a-white-ribbed-top-and-jeans-iyFmMcsaibs"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1785273751496-f1a76f54a16f",
+      "photographer": "McFollis",
+      "photographerUrl": "https://unsplash.com/@thisismcfollis",
+      "photoUrl": "https://unsplash.com/photos/young-black-woman-in-white-crop-top-and-blue-jeans-MvH8_2HL14s"
+    }
+  ],
+  "wide-leg-trousers": [
+    {
+      "url": "https://images.unsplash.com/photo-1687825515654-23620796760c",
+      "photographer": "Laura Oliveira",
+      "photographerUrl": "https://unsplash.com/@lauraaoliveira",
+      "photoUrl": "https://unsplash.com/photos/a-woman-in-a-white-top-and-green-pants-moEtNGG8tM4"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1789110854083-e4752bded644",
+      "photographer": "engin akyurt",
+      "photographerUrl": "https://unsplash.com/@enginakyurt",
+      "photoUrl": "https://unsplash.com/photos/person-wearing-striped-white-trousers-5o36qPAwaQU"
+    }
+  ],
+  "slip-dress": [
+    {
+      "url": "https://images.unsplash.com/photo-1777713272516-e7b2216fe15e",
+      "photographer": "Margo Evardson",
+      "photographerUrl": "https://unsplash.com/@stadinstudio",
+      "photoUrl": "https://unsplash.com/photos/a-woman-in-a-white-dress-stands-in-a-garden-y40t2wpvmqU"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1751278402161-08f27318d389",
+      "photographer": "Ilona Purdes",
+      "photographerUrl": "https://unsplash.com/@ilonapurdes",
+      "photoUrl": "https://unsplash.com/photos/woman-poses-on-the-rocky-shore-in-a-dress-3K8EoDpK90g"
+    }
+  ],
+  "wool-coat-camel": [
+    {
+      "url": "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543",
+      "photographer": "Bundo Kim",
+      "photographerUrl": "https://unsplash.com/@bundo",
+      "photoUrl": "https://unsplash.com/photos/woman-wearing-brown-single-breasted-coat-standing-in-front-of-gray-brick-wall-zkHv9pvrE9U"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3",
+      "photographer": "Bundo Kim",
+      "photographerUrl": "https://unsplash.com/@bundo",
+      "photoUrl": "https://unsplash.com/photos/woman-wearing-brown-notched-lapel-coat-AhBR8UGvsGU"
+    }
+  ],
+  "cropped-cardigan": [
+    {
+      "url": "https://images.unsplash.com/photo-1672380300750-6294c5614695",
+      "photographer": "Saket Krishnam",
+      "photographerUrl": "https://unsplash.com/@saketkrishnam",
+      "photoUrl": "https://unsplash.com/photos/a-woman-wearing-a-white-sweater-and-pants--NYDaNcpouU"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1671770324841-6cbc0cccb93d",
+      "photographer": "Saket Krishnam",
+      "photographerUrl": "https://unsplash.com/@saketkrishnam",
+      "photoUrl": "https://unsplash.com/photos/a-woman-posing-for-a-picture-in-a-white-sweater-lDHNphcBKrI"
+    }
+  ],
+  "straight-denim": [
+    {
+      "url": "https://images.unsplash.com/photo-1475178626620-a4d074967452",
+      "photographer": "Tamara Bellis",
+      "photographerUrl": "https://unsplash.com/@tamarabellis",
+      "photoUrl": "https://unsplash.com/photos/woman-standing-wearing-jeans-and-white-top-zDyJOj8ZXG0"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1626879210826-c953d2dfa15f",
+      "photographer": "Marcel Strauß",
+      "photographerUrl": "https://unsplash.com/@martzzl",
+      "photoUrl": "https://unsplash.com/photos/woman-in-gray-t-shirt-and-blue-denim-jeans-sitting-on-gray-concrete-stairs-ORdq_aKGCVA"
+    }
+  ],
+  "silk-blouse": [
+    {
+      "url": "https://images.unsplash.com/photo-1675379086716-95bf8a4d22f2",
+      "photographer": "Quartier Libre Paris",
+      "photographerUrl": "https://unsplash.com/@quartierlibreparis",
+      "photoUrl": "https://unsplash.com/photos/a-woman-with-curly-hair-wearing-a-white-blouse-09iQ8pafMXU"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1655203091785-9b07e64e4459",
+      "photographer": "Minh Dang",
+      "photographerUrl": "https://unsplash.com/@dangminh97",
+      "photoUrl": "https://unsplash.com/photos/a-woman-in-a-tan-coat-ChOcB6XvBKI"
+    }
+  ],
+  "court-sneaker-white": [
+    {
+      "url": "https://images.unsplash.com/photo-1608229751021-ed4bd8677753",
+      "photographer": "The DK Photography",
+      "photographerUrl": "https://unsplash.com/@deepain108",
+      "photoUrl": "https://unsplash.com/photos/white-nike-athletic-shoes-on-white-background-A8HaTLON5Gg"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1597350584914-55bb62285896",
+      "photographer": "Brian Hall",
+      "photographerUrl": "https://unsplash.com/@bfhall121",
+      "photoUrl": "https://unsplash.com/photos/white-nike-air-force-1-x5aavOm7PFc"
+    }
+  ],
+  "leather-chelsea-boot": [
+    {
+      "url": "https://images.unsplash.com/photo-1777987601677-3059be0e1388",
+      "photographer": "Husien Bisky",
+      "photographerUrl": "https://unsplash.com/@husien_bisky1",
+      "photoUrl": "https://unsplash.com/photos/a-pair-of-polished-brown-leather-chelsea-boots-AwhukWqsfSs"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1643226354613-260043e30011",
+      "photographer": "Zoe",
+      "photographerUrl": "https://unsplash.com/@_imd",
+      "photoUrl": "https://unsplash.com/photos/a-pair-of-brown-boots-sitting-on-top-of-a-floor-7nzzv-pmotQ"
+    }
+  ],
+  "running-shoe": [
+    {
+      "url": "https://images.unsplash.com/photo-1746206673199-5b75dcec1018",
+      "photographer": "Vlad Ciutacu",
+      "photographerUrl": "https://unsplash.com/@vladieboi",
+      "photoUrl": "https://unsplash.com/photos/a-white-running-shoe-hovering-in-the-air-tR2ZoPR4OPc"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1709258228137-19a8c193be39",
+      "photographer": "Tanaphong Toochinda",
+      "photographerUrl": "https://unsplash.com/@daen_2chinda",
+      "photoUrl": "https://unsplash.com/photos/a-pair-of-running-shoes-sitting-on-top-of-a-table-WWDMEVcGPbU"
+    }
+  ],
+  "suede-loafer": [
+    {
+      "url": "https://images.unsplash.com/photo-1743799349027-93aca0dd6273",
+      "photographer": "Kristina Tochilko",
+      "photographerUrl": "https://unsplash.com/@tochilko",
+      "photoUrl": "https://unsplash.com/photos/stylish-tassel-loafers-resting-on-wood-F3SuZhO02fI"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1556004583-d2aaffbba592",
+      "photographer": "Alex Hudson",
+      "photographerUrl": "https://unsplash.com/@aliffhassan91",
+      "photoUrl": "https://unsplash.com/photos/man-in-brown-loafers-Cpip61Lp28Q"
+    }
+  ],
+  "canvas-high-top": [
+    {
+      "url": "https://images.unsplash.com/photo-1784715435231-5547da837fa9",
+      "photographer": "Ansis Kančs",
+      "photographerUrl": "https://unsplash.com/@ansisansis",
+      "photoUrl": "https://unsplash.com/photos/light-blue-canvas-sneakers-on-a-dark-background-n5toOniIvb4"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1726279243877-a335ca591fc9",
+      "photographer": "Cemrecan Yurtman",
+      "photographerUrl": "https://unsplash.com/@cmrcn_",
+      "photoUrl": "https://unsplash.com/photos/a-person-is-sitting-on-a-tree-branch-IJh6hGsMM-4"
+    }
+  ],
+  "leather-sandal": [
+    {
+      "url": "https://images.unsplash.com/photo-1605445175147-8d2340ea9065",
+      "photographer": "Sincerely Media",
+      "photographerUrl": "https://unsplash.com/@sincerelymedia",
+      "photoUrl": "https://unsplash.com/photos/person-wearing-black-leather-sandals-n2vMMkNivwU"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1625563206627-7e713d1ac0a8",
+      "photographer": "Ivan Andriavani",
+      "photographerUrl": "https://unsplash.com/@ivan_andriavani",
+      "photoUrl": "https://unsplash.com/photos/brown-and-black-slide-sandals-on-gray-sand-t-3dZVAUqkk"
+    }
+  ],
+  "trail-runner": [
+    {
+      "url": "https://images.unsplash.com/photo-1582898967731-b5834427fd66",
+      "photographer": "Robin Benzrihem",
+      "photographerUrl": "https://unsplash.com/@robinoode",
+      "photoUrl": "https://unsplash.com/photos/black-and-red-nike-athletic-shoes-8iZvOp39rzw"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1789121127406-73561792173d",
+      "photographer": "Vincent Tavernier",
+      "photographerUrl": "https://unsplash.com/@vincent_tavernier",
+      "photoUrl": "https://unsplash.com/photos/person-adjusting-trail-running-shoe-coWHN2r_w1M"
+    }
+  ],
+  "leather-belt": [
+    {
+      "url": "https://images.unsplash.com/photo-1666723043169-22e29545675c",
+      "photographer": "Muhammet SAIN",
+      "photographerUrl": "https://unsplash.com/@kaviaq",
+      "photoUrl": "https://unsplash.com/photos/a-pair-of-sunglasses-on-a-table-tRu15nFN3Pw"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1711443982852-b3df5c563448",
+      "photographer": "saeed karimi",
+      "photographerUrl": "https://unsplash.com/@saeedkarimistudio",
+      "photoUrl": "https://unsplash.com/photos/a-pair-of-brown-leather-belts-sitting-on-top-of-a-white-piece-of-paper-rH16wMV8ImM"
+    }
+  ],
+  "canvas-tote": [
+    {
+      "url": "https://images.unsplash.com/photo-1544816155-12df9643f363",
+      "photographer": "Kelly Sikkema",
+      "photographerUrl": "https://unsplash.com/@kellysikkema",
+      "photoUrl": "https://unsplash.com/photos/beige-eco-bag-1Pgq9ZpIatI"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1506094543314-3747d5123bbe",
+      "photographer": "Katy Anne",
+      "photographerUrl": "https://unsplash.com/@katy_anne",
+      "photoUrl": "https://unsplash.com/photos/bag-sitting-on-a-dock-LX1qE-yF_Zs"
+    }
+  ],
+  "wool-beanie": [
+    {
+      "url": "https://images.unsplash.com/photo-1618354691792-d1d42acfd860",
+      "photographer": "Ryan Hoffman",
+      "photographerUrl": "https://unsplash.com/@ryanhoffman007",
+      "photoUrl": "https://unsplash.com/photos/black-knit-cap-on-white-surface-2BK0JEwQSpQ"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1648483092137-6e63796c8b06",
+      "photographer": "Old Youth",
+      "photographerUrl": "https://unsplash.com/@oldyouth",
+      "photoUrl": "https://unsplash.com/photos/a-blue-hat-sitting-on-top-of-a-rock-covered-in-lichen-20tmoT1sVi0"
+    }
+  ],
+  "aviator-sunglasses": [
+    {
+      "url": "https://images.unsplash.com/photo-1567473810954-507d59716c25",
+      "photographer": "Daniel Schludi",
+      "photographerUrl": "https://unsplash.com/@schluditsch",
+      "photoUrl": "https://unsplash.com/photos/gold-framed-aviator-style-sunglasses-tzA2MfnYSb0"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1599705709640-9f9eb5964485",
+      "photographer": "Andres Hernandez",
+      "photographerUrl": "https://unsplash.com/@andres11hernandez",
+      "photoUrl": "https://unsplash.com/photos/black-framed-aviator-style-sunglasses-ouAyz-zRMTw"
+    }
+  ],
+  "leather-card-holder": [
+    {
+      "url": "https://images.unsplash.com/photo-1512414947060-048d53abb081",
+      "photographer": "charlesdeluvio",
+      "photographerUrl": "https://unsplash.com/@charlesdeluvio",
+      "photoUrl": "https://unsplash.com/photos/closed-brown-leather-wallet-on-concrete-sBeIx7LdEc8"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1639256853919-950a673b1fbc",
+      "photographer": "Ranurte",
+      "photographerUrl": "https://unsplash.com/@ranurte",
+      "photoUrl": "https://unsplash.com/photos/three-leather-wallets-lined-up-on-top-of-each-other-NV7T5CTUDpU"
+    }
+  ],
+  "steel-watch": [
+    {
+      "url": "https://images.unsplash.com/photo-1590995505834-e5380bba1865",
+      "photographer": "François Hurtaud",
+      "photographerUrl": "https://unsplash.com/@francoishurtaud",
+      "photoUrl": "https://unsplash.com/photos/person-wearing-silver-round-analog-watch-qSwy78OAUgo"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1758887953059-ca6f8e454207",
+      "photographer": "Faraz Fayaz",
+      "photographerUrl": "https://unsplash.com/@farazfayaz",
+      "photoUrl": "https://unsplash.com/photos/a-sleek-black-wristwatch-with-a-minimalist-design-j-tmpHzQRHM"
+    }
+  ],
+  "cotton-cap": [
+    {
+      "url": "https://images.unsplash.com/photo-1656166229825-8bb5c3214111",
+      "photographer": "Benjamin R.",
+      "photographerUrl": "https://unsplash.com/@dapperprofessional",
+      "photoUrl": "https://unsplash.com/photos/a-hat-on-a-persons-head-gcZcCqpGEw0"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b",
+      "photographer": "Mediamodifier",
+      "photographerUrl": "https://unsplash.com/@mediamodifier",
+      "photoUrl": "https://unsplash.com/photos/white-baseball-cap-on-white-surface-t8HiP3e5abg"
+    }
+  ]
+}
