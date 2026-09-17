@@ -5,6 +5,7 @@ import { PhotoUpload } from "@/components/reviews/PhotoUpload";
 import { StarRating } from "@/components/reviews/StarRating";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import { useFault } from "@/lib/faults/FaultProvider";
 import { validateReview, type Review, type ReviewRequest } from "@/lib/reviews";
 
 type ReviewFormProps = {
@@ -20,6 +21,7 @@ export function ReviewForm({
   onSubmitted,
   onCancel,
 }: ReviewFormProps) {
+  const fault = useFault();
   const [rating, setRating] = useState(0);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -32,13 +34,17 @@ export function ReviewForm({
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    // Fault: the photo shows as uploaded but is never sent with the review.
+    const attachedPhoto =
+      fault === "dropped-upload" ? undefined : (photo ?? undefined);
+
     const request: ReviewRequest = {
       productId,
       rating,
       title,
       body,
       authorName,
-      photo: photo ?? undefined,
+      photo: attachedPhoto,
     };
 
     const validationErrors = validateReview(request);

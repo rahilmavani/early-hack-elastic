@@ -11,6 +11,7 @@ import { PaymentFields } from "@/components/checkout/PaymentFields";
 import { OrderSummary } from "@/components/bag/OrderSummary";
 import { Button } from "@/components/ui/Button";
 import { bagTotals, resolveBagLines } from "@/lib/bag";
+import { cn } from "@/lib/cn";
 import {
   emptyCheckoutValues,
   validateCheckout,
@@ -18,11 +19,13 @@ import {
   type CheckoutValues,
 } from "@/lib/checkout";
 import type { Order, OrderRequest } from "@/lib/orders";
+import { useFault } from "@/lib/faults/FaultProvider";
 import { useBag } from "@/lib/store/BagProvider";
 import { useOrders } from "@/lib/store/OrdersProvider";
 
 export function CheckoutForm() {
   const router = useRouter();
+  const fault = useFault();
   const bag = useBag();
   const orders = useOrders();
   const [values, setValues] = useState<CheckoutValues>(emptyCheckoutValues);
@@ -33,6 +36,10 @@ export function CheckoutForm() {
   const lines = resolveBagLines(bag.items);
   const totals = bagTotals(lines, values.delivery);
   const errorCount = Object.keys(errors).length;
+
+  // Fault: validation still runs, but nothing visible tells the user what went wrong.
+  const hideValidation = fault === "offscreen-validation";
+  const fieldErrors = hideValidation ? {} : errors;
 
   if (!bag.hydrated) {
     return null;
@@ -66,6 +73,11 @@ export function CheckoutForm() {
     const validationErrors = validateCheckout(values);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
+      return;
+    }
+
+    // Fault: the handler returns before any request is made, with no feedback.
+    if (fault === "silent-checkout") {
       return;
     }
 
@@ -122,7 +134,7 @@ export function CheckoutForm() {
         <FormSection title="Contact">
           <ContactFields
             values={values}
-            errors={errors}
+            errors={fieldErrors}
             onChange={handleChange}
           />
         </FormSection>
@@ -130,7 +142,7 @@ export function CheckoutForm() {
         <FormSection title="Delivery address">
           <AddressFields
             values={values}
-            errors={errors}
+            errors={fieldErrors}
             onChange={handleChange}
           />
         </FormSection>
@@ -146,7 +158,7 @@ export function CheckoutForm() {
         <FormSection title="Payment">
           <PaymentFields
             values={values}
-            errors={errors}
+            errors={fieldErrors}
             onChange={handleChange}
           />
         </FormSection>
@@ -162,7 +174,13 @@ export function CheckoutForm() {
             {submitting ? "Placing order..." : "Place order"}
           </Button>
           {errorCount > 0 && (
-            <p role="alert" className="text-danger mt-3 text-sm">
+            <p
+              role="alert"
+              className={cn(
+                "text-danger mt-3 text-sm",
+                hideValidation && "absolute top-0 -left-[9999px]",
+              )}
+            >
               Please fix the {errorCount} highlighted{" "}
               {errorCount === 1 ? "field" : "fields"}.
             </p>

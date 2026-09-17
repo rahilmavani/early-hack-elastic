@@ -1,16 +1,35 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { BagLineItem } from "@/components/bag/BagLineItem";
 import { OrderSummary } from "@/components/bag/OrderSummary";
 import { Button } from "@/components/ui/Button";
 import { bagItemKey, bagTotals, resolveBagLines } from "@/lib/bag";
+import { useFault } from "@/lib/faults/FaultProvider";
 import { useBag } from "@/lib/store/BagProvider";
 
 export function BagView() {
   const bag = useBag();
+  const fault = useFault();
   const lines = resolveBagLines(bag.items);
-  const totals = bagTotals(lines);
+  const liveTotals = bagTotals(lines);
+  const [frozenTotals, setFrozenTotals] = useState<typeof liveTotals | null>(
+    null,
+  );
+  const totals = frozenTotals ?? liveTotals;
+
+  function handleQuantityChange(
+    productId: string,
+    size: string,
+    quantity: number,
+  ) {
+    // Fault: the summary stops updating from the first quantity change onwards.
+    if (fault === "stale-bag-total" && frozenTotals === null) {
+      setFrozenTotals(liveTotals);
+    }
+    bag.setQuantity(productId, size, quantity);
+  }
 
   if (!bag.hydrated) {
     return null;
@@ -35,7 +54,7 @@ export function BagView() {
             key={bagItemKey(line)}
             line={line}
             onQuantityChange={(quantity) =>
-              bag.setQuantity(line.productId, line.size, quantity)
+              handleQuantityChange(line.productId, line.size, quantity)
             }
             onRemove={() => bag.removeItem(line.productId, line.size)}
           />
