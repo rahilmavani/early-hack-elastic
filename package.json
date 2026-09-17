@@ -1,0 +1,14 @@
+{
+  "name": "eyewitness",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace storefront",
+    "build": "npm run build --workspace storefront",
+    "start": "npm run start --workspace storefront",
+    "lint": "npm run lint --workspaces",
+    "format": "npm run format --workspaces"
+  }
+}

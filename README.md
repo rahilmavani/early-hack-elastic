@@ -6,8 +6,15 @@ Logs, metrics and traces describe what the backend did. None of them capture wha
 
 ## Apps
 
-| Path | What it is |
-| --- | --- |
+| Path              | What it is                                                                                                                                                                       |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `apps/storefront` | A minimal ecommerce site that acts as the live product under observation. Emits session replay and RUM telemetry, and can be switched into named silent-failure modes for demos. |
 
-Each app is self-contained. See its README for setup.
+## Run
+
+```bash
+npm install
+npm run dev
+```
+
+The root package uses npm workspaces. `npm run dev`, `build` and `start` target the storefront; `lint` and `format` run across every app. See each app's README for details.

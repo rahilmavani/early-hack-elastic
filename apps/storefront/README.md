@@ -6,12 +6,14 @@ No auth, no real payments. Bag, wishlist and orders live in the browser's localS
 
 ## Run
 
+From the repo root:
+
 ```bash
 npm install
 npm run dev
 ```
 
-Then open http://localhost:3000.
+Then open http://localhost:3000. The same scripts also work from inside `apps/storefront`.
 
 | Script                          | What it does                                               |
 | ------------------------------- | ---------------------------------------------------------- |
