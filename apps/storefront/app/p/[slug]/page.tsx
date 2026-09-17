@@ -6,6 +6,7 @@ import { PriceTag } from "@/components/product/PriceTag";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { PurchasePanel } from "@/components/product/PurchasePanel";
 import { Rating } from "@/components/product/Rating";
+import { ReviewsSection } from "@/components/reviews/ReviewsSection";
 import { Accordion } from "@/components/ui/Accordion";
 import {
   getProductBySlug,
@@ -84,6 +85,12 @@ export default async function ProductPage({ params }: PageProps<"/p/[slug]">) {
               </Accordion>
             </div>
           </div>
+        </div>
+      </Container>
+
+      <Container className="py-10">
+        <div className="max-w-2xl">
+          <ReviewsSection productId={product.id} />
         </div>
       </Container>
 
