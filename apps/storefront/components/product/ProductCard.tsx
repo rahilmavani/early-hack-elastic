@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/data/products";
 import { PriceTag } from "@/components/product/PriceTag";
+import { WishlistButton } from "@/components/product/WishlistButton";
 
 type ProductCardProps = {
   product: Product;
@@ -25,6 +26,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             New
           </span>
         )}
+        <WishlistButton productId={product.id} />
         <div className="bg-canvas/95 text-ink-muted absolute inset-x-0 bottom-0 translate-y-full px-3 py-2 text-xs transition-transform duration-300 group-hover:translate-y-0">
           Sizes: {product.sizes.join(", ")}
         </div>

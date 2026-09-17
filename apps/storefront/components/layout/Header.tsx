@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Heart, ShoppingBag } from "lucide-react";
 import { categories } from "@/data/categories";
 import { Container } from "@/components/layout/Container";
+import { HeaderActions } from "@/components/layout/HeaderActions";
 import { MobileNav } from "@/components/layout/MobileNav";
 
 export function Header() {
@@ -26,14 +26,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-4">
-          <Link href="/wishlist" aria-label="Wishlist" className="p-1">
-            <Heart size={20} strokeWidth={1.5} />
-          </Link>
-          <Link href="/bag" aria-label="Bag" className="p-1">
-            <ShoppingBag size={20} strokeWidth={1.5} />
-          </Link>
-        </div>
+        <HeaderActions />
       </Container>
     </header>
   );
