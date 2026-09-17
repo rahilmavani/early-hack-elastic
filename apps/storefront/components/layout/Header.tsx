@@ -3,6 +3,7 @@ import { categories } from "@/data/categories";
 import { Container } from "@/components/layout/Container";
 import { HeaderActions } from "@/components/layout/HeaderActions";
 import { MobileNav } from "@/components/layout/MobileNav";
+import { SearchForm } from "@/components/layout/SearchForm";
 
 export function Header() {
   return (
@@ -26,6 +27,9 @@ export function Header() {
           ))}
         </nav>
 
+        <div className="ml-auto">
+          <SearchForm />
+        </div>
         <HeaderActions />
       </Container>
     </header>

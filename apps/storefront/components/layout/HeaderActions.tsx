@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Heart, ShoppingBag } from "lucide-react";
+import { Heart, Search, ShoppingBag } from "lucide-react";
 import { bagItemCount } from "@/lib/bag";
 import { useBag } from "@/lib/store/BagProvider";
 import { useWishlist } from "@/lib/store/WishlistProvider";
@@ -26,7 +26,10 @@ export function HeaderActions() {
   const wishlist = useWishlist();
 
   return (
-    <div className="ml-auto flex items-center gap-4">
+    <div className="flex items-center gap-4">
+      <Link href="/search" aria-label="Search" className="p-1 md:hidden">
+        <Search size={20} strokeWidth={1.5} />
+      </Link>
       <Link href="/wishlist" aria-label="Wishlist" className="relative p-1">
         <Heart size={20} strokeWidth={1.5} />
         <CountBadge count={wishlist.productIds.length} />
