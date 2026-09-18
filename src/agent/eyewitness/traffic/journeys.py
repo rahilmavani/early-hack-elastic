@@ -2,7 +2,7 @@ import asyncio
 import random
 import re
 
-from playwright.async_api import Page
+from playwright.async_api import Page, expect
 
 from eyewitness.config import REPO_ROOT
 
@@ -76,7 +76,12 @@ async def browse(page: Page) -> None:
         await open_random_product(page)
 
 
-async def purchase(page: Page, skip_field: str | None = None, retries: int = 0) -> None:
+async def purchase(
+    page: Page,
+    skip_field: str | None = None,
+    retries: int = 0,
+    expect_payment_timeout: bool = False,
+) -> None:
     await open_random_product(page)
     await choose_size_and_add_to_bag(page)
     await page.locator("header").get_by_role("link", name="Bag").click()
@@ -88,6 +93,25 @@ async def purchase(page: Page, skip_field: str | None = None, retries: int = 0) 
     await fill_checkout(page, skip_field=skip_field)
     if retries:
         await click_place_order_repeatedly(page, times=retries)
+        return
+    if expect_payment_timeout:
+        async with page.expect_response(
+            lambda response: (
+                response.url.endswith("/api/orders") and response.request.method == "POST"
+            ),
+            timeout=15000,
+        ) as pending_response:
+            await page.get_by_role("button", name="Place order").click()
+            await expect(page.get_by_role("button", name="Placing order...")).to_be_disabled()
+        response = await pending_response.value
+        if response.status != 504:
+            raise AssertionError(f"Expected payment timeout (504), got {response.status}")
+        error_message = "We couldn't place your order. Please try again."
+        await expect(page.get_by_role("alert").filter(has_text=error_message)).to_have_text(
+            error_message
+        )
+        await expect(page.get_by_role("button", name="Place order")).to_be_enabled()
+        await pause(2.0, 3.0)
         return
     await page.get_by_role("button", name="Place order").click()
     await page.wait_for_url("**/order/**", timeout=15000)

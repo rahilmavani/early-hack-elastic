@@ -11,8 +11,45 @@ class TriageResult(BaseModel):
     reason: str = Field(description="One or two sentences grounded in specific frames.")
 
 
+class PlainLanguage(BaseModel):
+    """The finding retold for someone who has ten seconds and no engineering background."""
+
+    headline: str = Field(
+        description=(
+            "Plain-English headline under 60 characters, no jargon, no component names. "
+            "Example: 'Bag total doesn't update when quantity changes'."
+        )
+    )
+    step_tried: str = Field(
+        description=(
+            "What the user tried, under 50 characters. Example: 'Added more jeans to the bag'."
+        )
+    )
+    step_expected: str = Field(
+        description="What should have happened, under 50 characters. Example: 'Total goes up'."
+    )
+    step_got: str = Field(
+        description=(
+            "What happened instead, under 60 characters, the single most visible fact. "
+            "Example: 'Total stayed at ₹3,799'."
+        )
+    )
+
+
 class ExtractionResult(BaseModel):
     title: str = Field(description="Short incident title, under 80 characters.")
+    headline: str | None = Field(
+        default=None, description=PlainLanguage.model_fields["headline"].description
+    )
+    step_tried: str | None = Field(
+        default=None, description=PlainLanguage.model_fields["step_tried"].description
+    )
+    step_expected: str | None = Field(
+        default=None, description=PlainLanguage.model_fields["step_expected"].description
+    )
+    step_got: str | None = Field(
+        default=None, description=PlainLanguage.model_fields["step_got"].description
+    )
     page: str = Field(description="Path of the page where it broke, e.g. /checkout.")
     user_intent: str = Field(description="What the user was trying to do.")
     expected: str = Field(description="What should have happened.")

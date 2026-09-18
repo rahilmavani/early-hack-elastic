@@ -37,6 +37,14 @@ async function handlePost(request: Request) {
     return NextResponse.json({ error: "Unknown product" }, { status: 400 });
   }
 
+  if (request.headers.get("x-fault") === "slow-payment") {
+    await new Promise((resolve) => setTimeout(resolve, 8000));
+    return NextResponse.json(
+      { error: "Payment gateway timed out" },
+      { status: 504 },
+    );
+  }
+
   const subtotal = body.items.reduce(
     (sum, item) => sum + item.unitPrice * item.quantity,
     0,

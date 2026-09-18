@@ -1,0 +1,5 @@
+e7cd0a51-aa7b-45f7-8199-5b823f004c70  score=33.209999084472656 dead=5 rage=1 resubmits=4 checkout_abandoned=True backend_error=False high_api_latency=False
+5b283d13-c274-48f4-a611-8cbda046161b  score=7.210000038146973 dead=0 rage=0 resubmits=0 checkout_abandoned=True backend_error=True high_api_latency=True
+a4bd1751-892e-4d30-af82-0c673d0f7e73  score=5.119999885559082 dead=0 rage=0 resubmits=1 checkout_abandoned=True backend_error=False high_api_latency=False
+7e06d483-8bd5-459a-8a4c-5b4906a685da  score=5.0    dead=0 rage=1 resubmits=0 checkout_abandoned=False backend_error=False high_api_latency=False
+4 sessions selected

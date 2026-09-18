@@ -1,0 +1,57 @@
+{
+  "run_id": "live-20260918-backend",
+  "started_at": "2026-09-18T08:19:31.354841+00:00",
+  "swept": 4,
+  "rendered": 4,
+  "watched": 4,
+  "confirmed": 4,
+  "filed": 1,
+  "deduplicated": 3,
+  "cost_usd": 0.9358,
+  "outcomes": [
+    {
+      "session_id": "e7cd0a51-aa7b-45f7-8199-5b823f004c70",
+      "difficulty_score": 33.209999084472656,
+      "stage": "filed",
+      "confirmed": true,
+      "case_id": "2fea4768-d731-4ab4-8b32-9b187ed67b76",
+      "deduplicated": true,
+      "input_tokens": 75992,
+      "output_tokens": 822,
+      "error": null
+    },
+    {
+      "session_id": "5b283d13-c274-48f4-a611-8cbda046161b",
+      "difficulty_score": 7.210000038146973,
+      "stage": "filed",
+      "confirmed": true,
+      "case_id": "e2964983-121c-4012-b886-d4ad67c7fc0c",
+      "deduplicated": true,
+      "input_tokens": 75981,
+      "output_tokens": 707,
+      "error": null
+    },
+    {
+      "session_id": "a4bd1751-892e-4d30-af82-0c673d0f7e73",
+      "difficulty_score": 5.119999885559082,
+      "stage": "filed",
+      "confirmed": true,
+      "case_id": "2fea4768-d731-4ab4-8b32-9b187ed67b76",
+      "deduplicated": true,
+      "input_tokens": 75968,
+      "output_tokens": 706,
+      "error": null
+    },
+    {
+      "session_id": "7e06d483-8bd5-459a-8a4c-5b4906a685da",
+      "difficulty_score": 5.0,
+      "stage": "filed",
+      "confirmed": true,
+      "case_id": "2bcadae6-2c74-465f-a922-cc766b0f92d4",
+      "deduplicated": false,
+      "input_tokens": 66856,
+      "output_tokens": 1193,
+      "error": null
+    }
+  ]
+}

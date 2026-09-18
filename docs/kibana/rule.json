@@ -1,0 +1,44 @@
+{
+  "name": "Eyewitness new incidents",
+  "rule_type_id": ".es-query",
+  "consumer": "alerts",
+  "enabled": true,
+  "tags": [
+    "eyewitness"
+  ],
+  "schedule": {
+    "interval": "1m"
+  },
+  "params": {
+    "searchType": "esQuery",
+    "index": [
+      "incidents"
+    ],
+    "timeField": "created_at",
+    "esQuery": "{\"query\": {\"range\": {\"created_at\": {\"gte\": \"now-5m\"}}}}",
+    "timeWindowSize": 5,
+    "timeWindowUnit": "m",
+    "threshold": [
+      0
+    ],
+    "thresholdComparator": ">",
+    "size": 100,
+    "aggType": "count",
+    "groupBy": "all",
+    "excludeHitsFromPreviousRun": true
+  },
+  "actions": [
+    {
+      "id": "eyewitness-server-log",
+      "group": "query matched",
+      "frequency": {
+        "summary": false,
+        "notify_when": "onActiveAlert"
+      },
+      "params": {
+        "level": "info",
+        "message": "Eyewitness: {{context.value}} new incident(s). Open the Eyewitness operations dashboard and Cases."
+      }
+    }
+  ]
+}

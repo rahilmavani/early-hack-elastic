@@ -1,0 +1,218 @@
+[
+  {
+    "fault": "dropped-upload",
+    "session_id": "c27c8908-922a-4d70-9b6c-ff0c172d5705",
+    "event_count": 99,
+    "last_batch_at": "2026-09-18T08:17:14.791189+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": false,
+      "checkout_dwell_ms": 0,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": false,
+      "checkout_abandoned": false,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:18:53.907814+00:00",
+      "difficulty_score": 0.0
+    }
+  },
+  {
+    "fault": "stale-bag-total",
+    "session_id": "7e06d483-8bd5-459a-8a4c-5b4906a685da",
+    "event_count": 104,
+    "last_batch_at": "2026-09-18T08:17:14.792426+00:00",
+    "signals": {
+      "rage_clicks": 1,
+      "backend_error": false,
+      "checkout_dwell_ms": 0,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": true,
+      "checkout_abandoned": false,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:18:52.080770+00:00",
+      "difficulty_score": 5.0
+    }
+  },
+  {
+    "fault": null,
+    "session_id": "0eb18c42-e4c7-4d61-8a55-6ccbb29a775c",
+    "event_count": 178,
+    "last_batch_at": "2026-09-18T08:17:19.794445+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": false,
+      "checkout_dwell_ms": 5685,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": false,
+      "checkout_abandoned": false,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:18:50.640108+00:00",
+      "difficulty_score": 0.0
+    }
+  },
+  {
+    "fault": null,
+    "session_id": "fa43551c-0624-44fe-96ee-1aee05d4286d",
+    "event_count": 97,
+    "last_batch_at": "2026-09-18T08:17:29.458331+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": false,
+      "checkout_dwell_ms": 0,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": false,
+      "checkout_abandoned": false,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:19:00.051463+00:00",
+      "difficulty_score": 0.0
+    }
+  },
+  {
+    "fault": null,
+    "session_id": "07618ec5-81d7-4720-8071-f2519ef2bb53",
+    "event_count": 100,
+    "last_batch_at": "2026-09-18T08:17:40.297580+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": false,
+      "checkout_dwell_ms": 0,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": false,
+      "checkout_abandoned": false,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:18:58.253244+00:00",
+      "difficulty_score": 0.0
+    }
+  },
+  {
+    "fault": null,
+    "session_id": "d008da92-8dec-451e-9913-6cb6f4a65cac",
+    "event_count": 153,
+    "last_batch_at": "2026-09-18T08:17:42.527249+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": false,
+      "checkout_dwell_ms": 6097,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": false,
+      "checkout_abandoned": false,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:18:56.587189+00:00",
+      "difficulty_score": 0.0
+    }
+  },
+  {
+    "fault": null,
+    "session_id": "033ab0b8-87d8-40bf-8c33-fbbf30bf5718",
+    "event_count": 54,
+    "last_batch_at": "2026-09-18T08:17:48.075453+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": false,
+      "checkout_dwell_ms": 0,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": false,
+      "checkout_abandoned": false,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:18:55.045417+00:00",
+      "difficulty_score": 0.0
+    }
+  },
+  {
+    "fault": "offscreen-validation",
+    "session_id": "a4bd1751-892e-4d30-af82-0c673d0f7e73",
+    "event_count": 146,
+    "last_batch_at": "2026-09-18T08:17:57.977596+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": false,
+      "checkout_dwell_ms": 7327,
+      "dead_clicks": 0,
+      "repeated_submits": 1,
+      "bag_abandoned": false,
+      "checkout_abandoned": true,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:19:01.570046+00:00",
+      "difficulty_score": 5.12
+    }
+  },
+  {
+    "fault": null,
+    "session_id": "c17d1d3b-2cde-48cd-81e9-6fd86a2484b6",
+    "event_count": 53,
+    "last_batch_at": "2026-09-18T08:18:02.086558+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": false,
+      "checkout_dwell_ms": 0,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": false,
+      "checkout_abandoned": false,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:19:03.275108+00:00",
+      "difficulty_score": 0.0
+    }
+  },
+  {
+    "fault": null,
+    "session_id": "6053ffd8-5d26-4319-aa44-bf6165452f02",
+    "event_count": 165,
+    "last_batch_at": "2026-09-18T08:18:06.947847+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": false,
+      "checkout_dwell_ms": 5350,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": false,
+      "checkout_abandoned": false,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:19:05.016998+00:00",
+      "difficulty_score": 0.0
+    }
+  },
+  {
+    "fault": "slow-payment",
+    "session_id": "5b283d13-c274-48f4-a611-8cbda046161b",
+    "event_count": 157,
+    "last_batch_at": "2026-09-18T08:18:29.389885+00:00",
+    "signals": {
+      "rage_clicks": 0,
+      "backend_error": true,
+      "checkout_dwell_ms": 12886,
+      "dead_clicks": 0,
+      "repeated_submits": 0,
+      "bag_abandoned": false,
+      "checkout_abandoned": true,
+      "high_api_latency": true,
+      "computed_at": "2026-09-18T08:19:06.952544+00:00",
+      "difficulty_score": 7.21
+    }
+  },
+  {
+    "fault": "silent-checkout",
+    "session_id": "e7cd0a51-aa7b-45f7-8199-5b823f004c70",
+    "event_count": 174,
+    "last_batch_at": "2026-09-18T08:18:30.977486+00:00",
+    "signals": {
+      "rage_clicks": 1,
+      "backend_error": false,
+      "checkout_dwell_ms": 12865,
+      "dead_clicks": 5,
+      "repeated_submits": 4,
+      "bag_abandoned": false,
+      "checkout_abandoned": true,
+      "high_api_latency": false,
+      "computed_at": "2026-09-18T08:19:08.258834+00:00",
+      "difficulty_score": 33.21
+    }
+  }
+]

@@ -13,8 +13,10 @@ SOURCE_MUTATION = 0
 DEAD_CLICK_WINDOW_MS = 1000
 RAGE_CLICK_GAP_MS = 2000
 RAGE_CLICK_MIN = 3
+HIGH_API_LATENCY_MS = 5_000
 
 WEIGHTS = {
+    "backend_issue": 5.0,
     "dead_clicks": 3.0,
     "rage_clicks": 4.0,
     "repeated_submits": 3.0,
@@ -34,6 +36,8 @@ class Signals:
     checkout_abandoned: bool = False
     bag_abandoned: bool = False
     difficulty_score: float = 0.0
+    backend_error: bool = False
+    high_api_latency: bool = False
 
     def as_dict(self) -> dict:
         return asdict(self)
@@ -158,7 +162,8 @@ def score(signals: Signals) -> float:
         + signals.repeated_submits * WEIGHTS["repeated_submits"]
         + (WEIGHTS["checkout_abandoned"] if signals.checkout_abandoned else 0)
         + (WEIGHTS["bag_abandoned"] if signals.bag_abandoned else 0)
-        + dwell_points,
+        + dwell_points
+        + (WEIGHTS["backend_issue"] if signals.backend_error or signals.high_api_latency else 0),
         2,
     )
 

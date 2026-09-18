@@ -1,0 +1,86 @@
+[
+  {
+    "session_id": "40b986d3-8a46-40b9-a869-95520e80dc42",
+    "fault": null,
+    "journey": "purchase",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "29720337-dd23-4adb-993f-908067a822f3",
+    "fault": "offscreen-validation",
+    "journey": "purchase_missing_field",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "8ff105a4-baa2-4bee-bb8b-1439ec27ec88",
+    "fault": "silent-checkout",
+    "journey": "purchase_dead_button",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "fd31aa5d-a434-4bd3-b0e0-1299a8776e43",
+    "fault": null,
+    "journey": "browse",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "2c24fdb3-28f7-4bc1-935d-2353d2c2c6b4",
+    "fault": "stale-bag-total",
+    "journey": "adjust_bag",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "3f232761-5bb0-4342-b8af-ef88d17fbea2",
+    "fault": null,
+    "journey": "purchase",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "dcbcb96d-23b4-4785-96c0-54dd55e8717c",
+    "fault": null,
+    "journey": "browse",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "d9157834-5efc-457d-b256-f3574f763f30",
+    "fault": null,
+    "journey": "browse",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "33309318-8b7e-48dc-b6c7-a0b25721444e",
+    "fault": null,
+    "journey": "review",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "5a8271a0-e7ae-4852-8c52-b18a50fc02f5",
+    "fault": "slow-payment",
+    "journey": "purchase_payment_timeout",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "53fde084-f78a-40e6-ab89-abb208bd1de3",
+    "fault": null,
+    "journey": "review",
+    "ok": true,
+    "error": null
+  },
+  {
+    "session_id": "db2a994b-a4fb-4ec7-b3c1-f5f464c2f2df",
+    "fault": "dropped-upload",
+    "journey": "review_with_photo",
+    "ok": true,
+    "error": null
+  }
+]

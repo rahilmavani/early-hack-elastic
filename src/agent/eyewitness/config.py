@@ -1,5 +1,6 @@
 from functools import lru_cache
 from pathlib import Path
+from typing import Literal
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -13,6 +14,7 @@ class Settings(BaseSettings):
     elastic_cloud_endpoint: str
     elastic_api_key: str
     kibana_url: str = ""
+    kibana_case_owner: Literal["observability", "cases", "securitySolution"] = "observability"
 
     aws_region: str = "us-east-1"
     aws_access_key_id: str = ""
