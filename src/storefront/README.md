@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-Then open http://localhost:3000. The same scripts also work from inside `apps/storefront`.
+Then open http://localhost:3000. The same scripts also work from inside `src/storefront`.
 
 | Script                          | What it does                                               |
 | ------------------------------- | ---------------------------------------------------------- |

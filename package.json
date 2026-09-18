@@ -2,7 +2,7 @@
   "name": "eyewitness",
   "private": true,
   "workspaces": [
-    "apps/*"
+    "src/*"
   ],
   "scripts": {
     "dev": "npm run dev --workspace storefront",
