@@ -1,20 +1,34 @@
-# dependencies
-node_modules/
-
-# next.js
-.next/
-out/
-next-env.d.ts
-
-# local data written at runtime (replay events, orders)
-.data/
-
-# env
+# env and secrets
 .env
 .env.*
 !.env.example
+*.pem
+*.p12
+*.key
+id_rsa
+id_rsa.pub
+credentials.json
+secrets.json
 
-# misc
-.DS_Store
-*.log
+# dependencies
+node_modules/
+__pycache__/
+.venv/
+venv/
+
+# build output
+.next/
+out/
+dist/
+build/
+next-env.d.ts
 *.tsbuildinfo
+
+# local data written at runtime (replay events, orders, run checkpoints)
+.data/
+
+# editors and os
+.DS_Store
+.idea/
+.vscode/
+*.log
