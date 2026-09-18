@@ -1,0 +1,37 @@
+[project]
+name = "eyewitness"
+version = "0.1.0"
+description = "The incident response agent that saw it happen."
+requires-python = ">=3.12"
+dependencies = [
+  "boto3>=1.35",
+  "elasticsearch>=8.15,<9",
+  "fastapi>=0.115",
+  "httpx>=0.27",
+  "playwright>=1.47",
+  "pydantic>=2.9",
+  "pydantic-settings>=2.5",
+  "pyyaml>=6.0",
+  "typer>=0.12",
+  "uvicorn>=0.30",
+]
+
+[project.scripts]
+eyewitness = "eyewitness.cli:app"
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["eyewitness"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

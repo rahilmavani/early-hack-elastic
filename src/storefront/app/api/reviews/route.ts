@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { withServerEvent } from "@/lib/telemetry/serverEvents";
 import { seedReviewsFor } from "@/data/review-seeds";
 import { getProducts } from "@/lib/catalogue";
 import {
@@ -26,7 +27,7 @@ function isReviewRequest(body: unknown): body is ReviewRequest {
   );
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   const productId = new URL(request.url).searchParams.get("productId");
   if (!productId) {
     return NextResponse.json(
@@ -42,7 +43,7 @@ export async function GET(request: Request) {
   return NextResponse.json(reviews);
 }
 
-export async function POST(request: Request) {
+async function handlePost(request: Request) {
   const body = await request.json().catch(() => null);
   if (!isReviewRequest(body)) {
     return NextResponse.json({ error: "Invalid review" }, { status: 400 });
@@ -78,3 +79,6 @@ export async function POST(request: Request) {
 
   return NextResponse.json(review, { status: 201 });
 }
+
+export const GET = withServerEvent("/api/reviews", handleGet);
+export const POST = withServerEvent("/api/reviews", handlePost);

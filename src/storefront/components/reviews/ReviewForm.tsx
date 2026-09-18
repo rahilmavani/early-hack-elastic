@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PhotoUpload } from "@/components/reviews/PhotoUpload";
 import { StarRating } from "@/components/reviews/StarRating";
 import { Button } from "@/components/ui/Button";
+import { apiFetch } from "@/lib/telemetry/apiFetch";
 import { Input } from "@/components/ui/Input";
 import { useFault } from "@/lib/faults/FaultProvider";
 import { validateReview, type Review, type ReviewRequest } from "@/lib/reviews";
@@ -57,7 +58,7 @@ export function ReviewForm({
     setSubmitError(null);
 
     try {
-      const response = await fetch("/api/reviews", {
+      const response = await apiFetch("/api/reviews", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request),

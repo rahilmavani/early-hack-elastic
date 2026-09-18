@@ -5,6 +5,7 @@ import { ReviewForm } from "@/components/reviews/ReviewForm";
 import { ReviewList } from "@/components/reviews/ReviewList";
 import { Button } from "@/components/ui/Button";
 import type { Review } from "@/lib/reviews";
+import { apiFetch } from "@/lib/telemetry/apiFetch";
 
 type ReviewsSectionProps = {
   productId: string;
@@ -17,7 +18,7 @@ export function ReviewsSection({ productId }: ReviewsSectionProps) {
   useEffect(() => {
     let cancelled = false;
 
-    fetch(`/api/reviews?productId=${encodeURIComponent(productId)}`)
+    apiFetch(`/api/reviews?productId=${encodeURIComponent(productId)}`)
       .then((response) => (response.ok ? response.json() : []))
       .then((data: Review[]) => {
         if (!cancelled) {

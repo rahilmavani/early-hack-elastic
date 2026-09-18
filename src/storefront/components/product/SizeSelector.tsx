@@ -15,6 +15,7 @@ export function SizeSelector({ sizes, value, onChange }: SizeSelectorProps) {
           type="button"
           onClick={() => onChange(size)}
           aria-pressed={value === size}
+          aria-label={`Size ${size}`}
           className={cn(
             "h-10 min-w-12 border px-3 text-sm transition-colors",
             value === size

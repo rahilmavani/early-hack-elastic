@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html, body { margin: 0; background: #fff; overflow: hidden; }
+      .rr-player { box-shadow: none !important; }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.__finished = false;
+      window.startPlayer = function (events, width, height) {
+        const Player = window.rrwebPlayer.default || window.rrwebPlayer;
+        const player = new Player({
+          target: document.body,
+          props: {
+            events,
+            width,
+            height,
+            autoPlay: true,
+            speed: 1,
+            skipInactive: false,
+            showController: false,
+            mouseTail: false,
+          },
+        });
+        player.addEventListener("finish", () => { window.__finished = true; });
+        window.__player = player;
+      };
+    </script>
+  </body>
+</html>

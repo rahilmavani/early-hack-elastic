@@ -1,5 +1,18 @@
 import { record, type eventWithTime } from "rrweb";
 
+export const routeChangeTag = "route";
+
+let recording = false;
+
+// Next.js client navigations never reload the page, so rrweb sees no new
+// page event. This marks each route change explicitly for the agent.
+export function markRouteChange(pathname: string) {
+  if (!recording) {
+    return;
+  }
+  record.addCustomEvent(routeChangeTag, { path: pathname });
+}
+
 type ReplayOptions = {
   sessionId: string;
   endpoint: string;
@@ -81,7 +94,7 @@ export function startReplayRecording({
       return;
     }
     for (const chunk of chunkForBeacon(sessionId, events)) {
-      const body = new Blob([chunk], { type: "application/json" });
+      const body = new Blob([chunk], { type: "text/plain" });
       if (!navigator.sendBeacon(endpoint, body)) {
         break;
       }
@@ -102,6 +115,9 @@ export function startReplayRecording({
     sampling: { mousemove: 50, scroll: 150 },
   });
 
+  recording = true;
+  markRouteChange(window.location.pathname);
+
   const timer = window.setInterval(flush, flushIntervalMs);
   window.addEventListener("pagehide", flushWithBeacon);
   document.addEventListener("visibilitychange", handleVisibilityChange);
@@ -111,6 +127,7 @@ export function startReplayRecording({
     window.removeEventListener("pagehide", flushWithBeacon);
     document.removeEventListener("visibilitychange", handleVisibilityChange);
     stopRecording?.();
+    recording = false;
     flush();
   };
 }

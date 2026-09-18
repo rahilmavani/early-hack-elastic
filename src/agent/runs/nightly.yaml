@@ -1,0 +1,11 @@
+# One Eyewitness run. Thresholds here are where the accuracy lives; retune without touching code.
+window: 24h
+sweep:
+  threshold: 5.0
+  limit: 25
+render:
+  max_seconds: 180
+pricing:
+  # USD per 1,000 tokens for the vision model, used for the per-run cost line.
+  input_per_1k: 0.003
+  output_per_1k: 0.015

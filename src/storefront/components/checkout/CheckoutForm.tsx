@@ -10,6 +10,7 @@ import { FormSection } from "@/components/checkout/FormSection";
 import { PaymentFields } from "@/components/checkout/PaymentFields";
 import { OrderSummary } from "@/components/bag/OrderSummary";
 import { Button } from "@/components/ui/Button";
+import { apiFetch } from "@/lib/telemetry/apiFetch";
 import { bagTotals, resolveBagLines } from "@/lib/bag";
 import { cn } from "@/lib/cn";
 import {
@@ -106,7 +107,7 @@ export function CheckoutForm() {
     setSubmitError(null);
 
     try {
-      const response = await fetch("/api/orders", {
+      const response = await apiFetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request),
