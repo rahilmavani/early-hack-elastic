@@ -1,0 +1,5 @@
+Recorded sweep selections from run live-20260918-final (window 3m, threshold 5):
+8ff105a4-baa2-4bee-bb8b-1439ec27ec88  score=17.16
+29720337-dd23-4adb-993f-908067a822f3  score=12.14
+2c65869f-d2da-4ac9-ae75-65566bd710d3  score=6.00
+3 sessions selected

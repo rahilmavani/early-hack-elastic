@@ -4,6 +4,7 @@ import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Providers } from "@/components/layout/Providers";
+import { StorefrontChrome } from "@/components/layout/StorefrontChrome";
 import { TelemetryProvider } from "@/lib/telemetry/TelemetryProvider";
 import "./globals.css";
 
@@ -26,10 +27,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col font-sans">
         <TelemetryProvider />
         <Providers>
-          <AnnouncementBar />
-          <Header />
-          <div className="flex-1">{children}</div>
-          <Footer />
+          <StorefrontChrome
+            announcement={<AnnouncementBar />}
+            header={<Header />}
+            footer={<Footer />}
+          >
+            {children}
+          </StorefrontChrome>
         </Providers>
       </body>
     </html>

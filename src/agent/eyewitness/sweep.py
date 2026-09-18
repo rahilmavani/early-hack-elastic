@@ -7,7 +7,8 @@ FROM sessions
 | WHERE signals.difficulty_score >= ?threshold AND last_batch_at >= NOW() - {window}
 | SORT signals.difficulty_score DESC
 | KEEP session_id, signals.difficulty_score, signals.dead_clicks, signals.rage_clicks,
-       signals.repeated_submits, signals.checkout_abandoned, duration_ms
+       signals.repeated_submits, signals.checkout_abandoned, duration_ms,
+       signals.backend_error, signals.high_api_latency
 | LIMIT {limit}
 """
 
@@ -21,6 +22,8 @@ class SweptSession:
     repeated_submits: int
     checkout_abandoned: bool
     duration_ms: int
+    backend_error: bool = False
+    high_api_latency: bool = False
 
 
 def parse_window(window: str) -> str:
@@ -48,6 +51,8 @@ def sweep(client: Elasticsearch, threshold: float, window: str, limit: int) -> l
                 repeated_submits=record["signals.repeated_submits"] or 0,
                 checkout_abandoned=bool(record["signals.checkout_abandoned"]),
                 duration_ms=record["duration_ms"] or 0,
+                backend_error=bool(record["signals.backend_error"]),
+                high_api_latency=bool(record["signals.high_api_latency"]),
             )
         )
     return swept

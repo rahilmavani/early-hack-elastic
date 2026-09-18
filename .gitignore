@@ -26,6 +26,8 @@ next-env.d.ts
 
 # local data written at runtime (replay events, orders, run checkpoints)
 .data/
+output/playwright/
+.playwright-cli/
 
 # editors and os
 .DS_Store

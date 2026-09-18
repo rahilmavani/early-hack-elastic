@@ -1,5 +1,6 @@
 import httpx
 import typer
+from pydantic import ValidationError
 
 from eyewitness.bedrock import embed_text, runtime_client
 from eyewitness.config import aws_session, get_settings
@@ -82,6 +83,12 @@ def check_s3() -> bool:
 
 
 def run_checks() -> list[str]:
+    try:
+        get_settings()
+    except ValidationError as error:
+        fields = ", ".join(".".join(map(str, item["loc"])) for item in error.errors())
+        report("configuration", False, f"Set valid {fields} in the repo root .env")
+        return ["configuration"]
     checks = [
         check_elasticsearch,
         check_kibana,

@@ -1,0 +1,9 @@
+window: 5m
+sweep:
+  threshold: 5.0
+  limit: 25
+render:
+  max_seconds: 180
+pricing:
+  input_per_1k: 0.003
+  output_per_1k: 0.015

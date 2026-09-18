@@ -24,6 +24,16 @@ class FiledIncident:
     affected_users: int
 
 
+def plain_language_fields(finding) -> dict:
+    """The short retelling of a finding, only the parts the model actually filled."""
+    fields = {}
+    for name in ("headline", "step_tried", "step_expected", "step_got"):
+        value = getattr(finding, name, None)
+        if value:
+            fields[name] = value
+    return fields
+
+
 def load_watch(session_id: str) -> WatchResult:
     path = DATA_DIR / "renders" / session_id / "watch.json"
     return WatchResult.model_validate_json(path.read_text())
@@ -107,21 +117,37 @@ def file_session(
     description = describe(watch, trace, clip_url, frame_urls, users, translated)
 
     vector = embed_incident(finding.title, finding.page, finding.summary)
-    match = matching_incident(find_similar(client, vector))
+    match = matching_incident(
+        find_similar(client, vector), status_code=trace.status if trace else None
+    )
     incident_id = f"inc-{uuid.uuid4().hex[:10]}"
     now = datetime.now(UTC).isoformat()
 
     if match and match.case_id:
         note = (
             f"Seen again in session `{session_id}` at second {finding.failing_second}. "
-            f"Affected users now {users}. [Clip]({clip_url})"
+            f"Affected users now {users}.\n\n"
+            f"**Finding**: {finding.summary}\n\n{description}"
         )
         if match.status == "closed" and match.resolution:
             note += f"\n\nLast time this was closed with: {match.resolution}"
-        kibana.add_comment(match.case_id, note)
-        client.update(index=INCIDENTS, id=match.incident_id, doc={"affected_users": users})
+        updated_case = kibana.add_comment(match.case_id, note)
+        client.update(
+            index=INCIDENTS,
+            id=match.incident_id,
+            doc={
+                "affected_users": users,
+                "last_seen_at": now,
+                "last_seen_session_id": session_id,
+                **plain_language_fields(finding),
+            },
+        )
         return FiledIncident(
-            match.incident_id, match.case_id, kibana.case_url(match.case_id), True, users
+            match.incident_id,
+            match.case_id,
+            kibana.case_url(match.case_id, updated_case.get("owner")),
+            True,
+            users,
         )
 
     case = kibana.create_case(
@@ -138,6 +164,7 @@ def file_session(
             "status": "open",
             "title": finding.title,
             "summary": finding.summary,
+            **plain_language_fields(finding),
             "session_id": session_id,
             "failing_second": finding.failing_second,
             "clip_url": clip_url,
@@ -152,4 +179,6 @@ def file_session(
         },
         refresh=True,
     )
-    return FiledIncident(incident_id, case["id"], kibana.case_url(case["id"]), False, users)
+    return FiledIncident(
+        incident_id, case["id"], kibana.case_url(case["id"], case.get("owner")), False, users
+    )

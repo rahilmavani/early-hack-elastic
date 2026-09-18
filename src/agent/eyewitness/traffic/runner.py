@@ -34,6 +34,7 @@ def plan_sessions(total: int, broken: int) -> list[PlannedSession]:
         ("offscreen-validation", "purchase_missing_field"),
         ("stale-bag-total", "adjust_bag"),
         ("dropped-upload", "review_with_photo"),
+        ("slow-payment", "purchase_payment_timeout"),
     ]
     plan = [PlannedSession(None, random.choice(healthy_journeys)) for _ in range(total - broken)]
     for index in range(broken):
@@ -53,6 +54,8 @@ async def run_journey(page, planned: PlannedSession) -> None:
             await journeys.purchase(page, retries=random.randint(3, 5))
         case "purchase_missing_field":
             await journeys.purchase(page, skip_field="PIN code", retries=random.randint(2, 4))
+        case "purchase_payment_timeout":
+            await journeys.purchase(page, expect_payment_timeout=True)
         case "adjust_bag":
             await journeys.adjust_bag_quantity(page, changes=random.randint(2, 3))
         case "review":

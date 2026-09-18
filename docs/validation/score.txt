@@ -1,0 +1,17 @@
+evaluated 12 traffic sessions: swept 2, confirmed 2
+TP 2, FP 0, FN 3, TN 7
+precision 100.0%, recall 40.0%
+excluded traffic records 0; run outcomes outside evaluated truth 1
+session                                fault                      score stage          confirmed
+40b986d3-8a46-40b9-a869-95520e80dc42   healthy                        - not_selected   false
+29720337-dd23-4adb-993f-908067a822f3   offscreen-validation       12.14 filed          true
+8ff105a4-baa2-4bee-bb8b-1439ec27ec88   silent-checkout            17.16 filed          true
+fd31aa5d-a434-4bd3-b0e0-1299a8776e43   healthy                        - not_selected   false
+2c24fdb3-28f7-4bc1-935d-2353d2c2c6b4   stale-bag-total                - not_selected   false
+3f232761-5bb0-4342-b8af-ef88d17fbea2   healthy                        - not_selected   false
+dcbcb96d-23b4-4785-96c0-54dd55e8717c   healthy                        - not_selected   false
+d9157834-5efc-457d-b256-f3574f763f30   healthy                        - not_selected   false
+33309318-8b7e-48dc-b6c7-a0b25721444e   healthy                        - not_selected   false
+5a8271a0-e7ae-4852-8c52-b18a50fc02f5   slow-payment                   - not_selected   false
+53fde084-f78a-40e6-ab89-abb208bd1de3   healthy                        - not_selected   false
+db2a994b-a4fb-4ec7-b3c1-f5f464c2f2df   dropped-upload                 - not_selected   false

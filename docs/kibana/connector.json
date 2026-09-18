@@ -1,0 +1,6 @@
+{
+  "name": "Eyewitness server log",
+  "connector_type_id": ".server-log",
+  "config": {},
+  "secrets": {}
+}

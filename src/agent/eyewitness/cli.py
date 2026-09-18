@@ -2,7 +2,7 @@ import typer
 
 from eyewitness.config import get_settings
 from eyewitness.es.client import get_client
-from eyewitness.es.indices import ensure_indices, index_mappings
+from eyewitness.es.indices import SESSIONS, ensure_indices, index_mappings
 
 app = typer.Typer(
     help="Eyewitness: the incident response agent that saw it happen.",
@@ -85,8 +85,11 @@ def signals(
         typer.echo(
             f"{session_id}  score={result.difficulty_score:<6} dead={result.dead_clicks} "
             f"rage={result.rage_clicks} resubmits={result.repeated_submits} "
-            f"checkout_abandoned={result.checkout_abandoned}"
+            f"checkout_abandoned={result.checkout_abandoned} "
+            f"backend_error={result.backend_error} high_api_latency={result.high_api_latency}"
         )
+    if session_ids:
+        client.indices.refresh(index=SESSIONS)
     typer.echo(f"{len(session_ids)} sessions updated")
 
 
@@ -104,7 +107,8 @@ def sweep(
         typer.echo(
             f"{item.session_id}  score={item.difficulty_score:<6} dead={item.dead_clicks} "
             f"rage={item.rage_clicks} resubmits={item.repeated_submits} "
-            f"checkout_abandoned={item.checkout_abandoned}"
+            f"checkout_abandoned={item.checkout_abandoned} "
+            f"backend_error={item.backend_error} high_api_latency={item.high_api_latency}"
         )
     typer.echo(f"{len(swept)} sessions selected")
 
@@ -176,6 +180,48 @@ def file(
         f"{action} {filed.case_id} for {filed.incident_id}, {filed.affected_users} users affected"
     )
     typer.echo(filed.case_url)
+
+
+@app.command()
+def score(
+    run_id: str = typer.Option(..., "--run", help="Run id under .data/runs/."),
+    truth: str = typer.Option(..., help="Traffic ground-truth JSON file."),
+) -> None:
+    """Measure precision and recall across all successful sessions in a traffic batch."""
+    from pathlib import Path
+
+    from eyewitness.config import DATA_DIR
+    from eyewitness.score import score_run
+
+    if Path(run_id).name != run_id or run_id in (".", ".."):
+        raise typer.BadParameter("use a run id, not a path", param_hint="--run")
+    try:
+        report = score_run(DATA_DIR / "runs" / run_id, Path(truth))
+    except (OSError, ValueError) as error:
+        raise typer.BadParameter(str(error)) from error
+
+    typer.echo(
+        f"evaluated {len(report.sessions)} traffic sessions: swept {report.swept}, "
+        f"confirmed {report.confirmed}"
+    )
+    typer.echo(
+        f"TP {report.true_positives}, FP {report.false_positives}, "
+        f"FN {report.false_negatives}, TN {report.true_negatives}"
+    )
+    precision = f"{report.precision:.1%}" if report.precision is not None else "n/a"
+    recall = f"{report.recall:.1%}" if report.recall is not None else "n/a"
+    typer.echo(f"precision {precision}, recall {recall}")
+    typer.echo(
+        f"excluded traffic records {report.excluded_traffic}; "
+        f"run outcomes outside evaluated truth {report.unlabeled_outcomes}"
+    )
+    typer.echo(f"{'session':<38} {'fault':<24} {'score':>7} {'stage':<14} confirmed")
+    for row in report.sessions:
+        difficulty = f"{row.difficulty_score:g}" if row.difficulty_score is not None else "-"
+        typer.echo(
+            f"{row.session_id:<38} {row.fault or 'healthy':<24} {difficulty:>7} "
+            f"{row.stage:<14} {str(row.confirmed).lower()}"
+        )
 
 
 @app.command()

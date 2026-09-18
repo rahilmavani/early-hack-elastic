@@ -9,6 +9,7 @@ import yaml
 from elasticsearch import Elasticsearch
 
 from eyewitness.config import DATA_DIR
+from eyewitness.es.indices import SESSIONS
 from eyewitness.incidents import file_session
 from eyewitness.render.renderer import render_session
 from eyewitness.signals.run import compute_for_session, fetch_events, sessions_to_compute
@@ -72,6 +73,7 @@ def process_session(
     client: Elasticsearch, run_id: str, outcome: SessionOutcome, manifest: dict, log
 ) -> SessionOutcome:
     """Render, watch and file one session, resuming from whatever stage a checkpoint reached."""
+    outcome.error = None
     try:
         if outcome.stage == "selected":
             events = fetch_events(client, outcome.session_id)
@@ -120,6 +122,8 @@ def execute_run(client: Elasticsearch, manifest: dict, run_id: str | None, log) 
     pending = sessions_to_compute(client, manifest["window"], force=False)
     for item in pending:
         compute_for_session(client, item["session_id"])
+    if pending:
+        client.indices.refresh(index=SESSIONS)
     log(f"signals computed for {len(pending)} sessions")
 
     swept = sweep(

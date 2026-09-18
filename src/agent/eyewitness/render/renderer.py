@@ -1,5 +1,6 @@
 import asyncio
 import json
+import math
 import shutil
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -88,12 +89,14 @@ async def render_session(session_id: str, events: list[dict], max_seconds: int) 
         loop = asyncio.get_running_loop()
         started = loop.time()
         second = 0
-        while second <= play_seconds:
+        # Include the terminal state when the final event falls between second ticks.
+        # Otherwise a last-moment confirmation or error can be absent from every frame.
+        while second <= math.ceil(play_seconds):
             frame_path = frames_dir / f"{second:04d}.jpg"
             await page.screenshot(path=str(frame_path), type="jpeg", quality=70)
             frames.append(Frame(second=second, path=str(frame_path)))
             second += 1
-            if await page.evaluate("window.__finished"):
+            if second > math.ceil(play_seconds):
                 break
             next_tick = started + second * FRAME_INTERVAL_SECONDS
             await asyncio.sleep(max(0.0, next_tick - loop.time()))

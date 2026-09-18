@@ -3,6 +3,7 @@ export const faultNames = [
   "offscreen-validation",
   "dropped-upload",
   "stale-bag-total",
+  "slow-payment",
 ] as const;
 
 export type FaultName = (typeof faultNames)[number];

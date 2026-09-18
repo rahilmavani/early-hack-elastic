@@ -5,6 +5,11 @@ SESSIONS = "sessions"
 SERVER_EVENTS = "server-events"
 INCIDENTS = "incidents"
 
+BACKEND_SIGNAL_MAPPINGS = {
+    "backend_error": {"type": "boolean"},
+    "high_api_latency": {"type": "boolean"},
+}
+
 
 def index_mappings(embedding_dimensions: int) -> dict[str, dict]:
     return {
@@ -32,6 +37,7 @@ def index_mappings(embedding_dimensions: int) -> dict[str, dict]:
                 "last_batch_at": {"type": "date"},
                 "signals": {
                     "properties": {
+                        **BACKEND_SIGNAL_MAPPINGS,
                         "dead_clicks": {"type": "integer"},
                         "rage_clicks": {"type": "integer"},
                         "repeated_submits": {"type": "integer"},
@@ -101,4 +107,9 @@ def ensure_indices(
         if not exists:
             client.indices.create(index=name, mappings=mappings)
             created.append(name)
+        elif name == SESSIONS:
+            # Add fields to existing deployments without recreating any index.
+            client.indices.put_mapping(
+                index=name, properties={"signals": {"properties": BACKEND_SIGNAL_MAPPINGS}}
+            )
     return created

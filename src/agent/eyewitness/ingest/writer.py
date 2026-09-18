@@ -98,6 +98,7 @@ def write_replay_batch(client: Elasticsearch, batch: ReplayBatch) -> int:
     client.update(
         index=SESSIONS,
         id=batch.session_id,
+        retry_on_conflict=5,
         script={"source": SESSION_UPSERT_SCRIPT, "params": params},
         upsert={
             "session_id": batch.session_id,

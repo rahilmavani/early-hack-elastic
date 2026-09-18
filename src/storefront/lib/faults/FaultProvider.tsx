@@ -3,15 +3,8 @@
 import { createContext, Suspense, useContext, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { isFaultName, type FaultName } from "@/lib/faults/faults";
-import {
-  createPersistedStore,
-  usePersistedStore,
-} from "@/lib/store/persistedStore";
-
-const faultStore = createPersistedStore<FaultName | null>(
-  "northline.fault",
-  null,
-);
+import { faultStore } from "@/lib/faults/faultStore";
+import { usePersistedStore } from "@/lib/store/persistedStore";
 
 const FaultContext = createContext<FaultName | null>(null);
 
